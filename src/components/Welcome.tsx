@@ -11,7 +11,7 @@ const Welcome = () => {
                 <h1 className="text-5xl md:text-8xl font-bold text-white mb-8">
                     Content
                 </h1>
-                <p className="text-xl/15 text-gray-300 mt-4 max-w-2xl">
+                <p className="text-xl/15 text-gray-300 mt-4 max-w-2xl ml-2">
                     Great software isn’t measured by how many features it has,
                     but by how effortlessly people use the few things it does.
                     I focus on solving real problems with clarity, speed, and precision-building tools that feel

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Projects: React.FC<{}> = () => {
 
@@ -40,7 +39,7 @@ const Projects: React.FC<{}> = () => {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projectList.map((project) => {
                             return (
-                                <div className="group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-700 transition-all duration-300">
+                                <div key={project.title} className="group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-700 transition-all duration-300">
                                     <div className="aspect-video relative overflow-hidden">
                                         {/*<Image src="/project1-screenshot.jpg" alt="Project" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />*/}
                                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
