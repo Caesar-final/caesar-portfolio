@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+    reactStrictMode: true,
+    output: 'export',
+    images: {
+        unoptimized: true,
+    },
+    basePath: '/caesar-portfolio',
+    assetPrefix: '/caesar-portfolio/',
 };
 
 export default nextConfig;
