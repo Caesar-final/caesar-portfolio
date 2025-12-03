@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
+import OpenDesk from '../../public/Open_desk.png'
 
 const Projects: React.FC<{}> = () => {
 
@@ -7,6 +9,7 @@ const Projects: React.FC<{}> = () => {
         {
             title : "OpenDesk",
             description : "Help desk system focused on simplicity and user experience",
+            image : OpenDesk,
             technologies : [
                 {
                     styles : "px-3 py-1 bg-red-500/10 text-red-400 text-xs rounded-full",
@@ -41,7 +44,7 @@ const Projects: React.FC<{}> = () => {
                             return (
                                 <div key={project.title} className="group relative bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-700 transition-all duration-300">
                                     <div className="aspect-video relative overflow-hidden">
-                                        {/*<Image src="/project1-screenshot.jpg" alt="Project" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />*/}
+                                        <Image src={project.image} alt="Project" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
                                     </div>
                                     <div className="p-6">
