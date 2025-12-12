@@ -1,35 +1,33 @@
 const Welcome = () => {
-    return (
-        <div className="grid grid-cols-4 p-11 relative"> {/* ← added relative here */}
-            <div className="col-span-3 pl-40">
-                <h1 className="text-8xl md:text-8xl font-bold text-white mb-8">
-                    Experience
-                </h1>
-                <h1 className="text-5xl md:text-8xl font-bold text-white mb-8">
-                    Outweighs
-                </h1>
-                <h1 className="text-5xl md:text-8xl font-bold text-white mb-8">
-                    Content
-                </h1>
-                <p className="text-xl/15 text-gray-300 mt-4 max-w-2xl ml-2">
-                    Great software isn’t measured by how many features it has,
-                    but by how effortlessly people use the few things it does.
-                    I focus on solving real problems with clarity, speed, and precision-building tools that feel
-                    intuitive from the first click, because a product people love to use will always beat one
-                    overloaded with options nobody needs.
-                </p>
-            </div>
-            <div className="col-span-1 relative">
-                    <div className="absolute right-0 top-0 h-full w-full">
-                        <div className="absolute -right-0 top-1/2 -translate-y-1/2 w-96 h-96 md:w-[500px] md:h-[500px]
-                                bg-gradient-to-br from-cyan-500/30 via-blue-600/20 to-purple-700/30
-                                rounded-full blur-3xl animate-pulse" />
-                        <div className="absolute right-10 top-1/4 w-64 h-64 md:w-80 md:h-80
-                                bg-gradient-to-tr from-emerald-500/20 to-cyan-500/30
-                                rounded-full blur-3xl" />
-                    </div>
-            </div>
-        </div>)
-}
+  return (
+    <div className="container mx-auto px-6 md:px-10 lg:px-20 py-20 md:py-32">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-center">
+        <div className="col-span-1 lg:col-span-3">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            Experience
+          </h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cyan-400 leading-tight">
+            Outweighs
+          </h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            Content
+          </h1>
 
-export default Welcome
+          <p className="mt-8 text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed">
+            Great software isn’t measured by how many features it has, but by how effortlessly people use the few things it does. I focus on solving real problems with clarity, speed, and precision — building tools that feel intuitive from the first click.
+          </p>
+        </div>
+
+        {/* Gradient Background Orbs */}
+        <div className="relative h-96 lg:h-full hidden lg:block">
+          <div className="absolute inset-0 -right-20">
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-96 h-96 bg-gradient-to-br from-cyan-500/30 via-blue-600/20 to-purple-700/30 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute top-1/4 right-10 w-80 h-80 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/30 rounded-full blur-3xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Welcome;

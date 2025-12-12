@@ -73,42 +73,36 @@ export default function Home() {
 
     return (
         <div className="home h-full bg-zinc-950 text-white">
-            <header className="sticky top-0 z-50 w-full backdrop-blur px-4 md:px-6 [&_*]:no-underline">
-            <NavigationMenu className={""}>
-                <NavigationMenuList className="p-2">
-
-                        {navigationItems.map((item) => {
-                            return (
-                                <NavigationMenuItem key={item.key}>
-                                     <Button
-                                        onClick={() => item.section && scrollToSection(item.section)}
-                                        className={"hover:bg-zinc-100 hover:cursor-pointer bg-transparent hover:text-black rounded p-2 m-2"}
-                                    >
-                                        {item.title} {item.icon}
-                                    </Button>
-                                </NavigationMenuItem>
-                                )
-                        })}
-
-
-                        {socialsArray.map((item) => {
-                                return (<NavigationMenuItem key={item.key}>
-                                            {item.title ?
-                                                (<Button
-                                                    className={"hover:bg-zinc-100 hover:cursor-pointer bg-transparent hover:text-black rounded p-2 m-2"}>
-                                                    {item.link ? <Link href={item.link ?? ""} target="_blank">{item.title}</Link> : item.title} {item.icon}
-                                                </Button>) :
-                                                (<Button className={"hover:bg-zinc-100 hover:cursor-pointer bg-transparent hover:text-black rounded p-2 m-2"}>
-                                                    {item.link && <Link href={item.link ?? ""} target="_blank">{item.icon}</Link>}
-                                                </Button>)
-                                            }
-                                        </NavigationMenuItem>)
-                            })
-                        }
-
+        <header className="sticky top-0 z-50 w-full border-b border-zinc-800 backdrop-blur bg-zinc-950/80">
+            <div className="container mx-auto px-4 py-4">
+                <NavigationMenu>
+                <NavigationMenuList className="flex flex-wrap justify-center gap-2 md:gap-4">
+                    {navigationItems.map((item) => (
+                    <NavigationMenuItem key={item.key}>
+                        <Button
+                        variant="ghost"
+                        onClick={() => scrollToSection(item.section)}
+                        className="text-white  hover:text-black hover:bg-white hover:cursor-pointer flex items-center
+                         gap-2 px-3 py-2 text-sm md:text-base"
+                        >
+                        {item.icon}
+                        <span className="hidden sm:inline">{item.title}</span>
+                        </Button>
+                    </NavigationMenuItem>
+                    ))}
+                    {socialsArray.map((item) => (
+                    <NavigationMenuItem key={item.key}>
+                        <Button variant="ghost" asChild className="text-white hover:text-black hover:bg-white">
+                        <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                            {item.icon}
+                        </Link>
+                        </Button>
+                    </NavigationMenuItem>
+                    ))}
                 </NavigationMenuList>
-            </NavigationMenu>
-            </header>
+                </NavigationMenu>
+            </div>
+        </header>
             <main>
                 <section id="home" className={"min-h-screen py-20"}>
                     <Welcome></Welcome>
